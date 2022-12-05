@@ -8,7 +8,7 @@ var finalResult = document.getElementById('display-result');
 var finalPoints = document.getElementById("final-result");
 var result = document.getElementById("result");
 var initials = document.getElementById("submit-results")
-
+var allScores = document.getElementById("all-scores")
 // Gathered all buttons needed 
 var startButton = document.getElementById("start-button");
 var resetButton = document.getElementById("reset-button");
@@ -158,23 +158,26 @@ function storePoints() {
 
      
   
- // NOT DONE
-  function getPoints() {
-    // Get stored value from client storage, if it exists
-    var storedPoints = localStorage.getItem("pointCount");
-    // If stored value doesn't exist, set counter to 0
-    if (storedPoints === null) {
-      points.textContent = 0;
-    } else {
-      // If a value is retrieved from client storage set the pointCounter to that value
-      points.textContent = storedPoints;
-    }
+// function for getpoints displaying on view high scores 
+function getPoints() {
+    //Removing nodisp class so High scores are visible 
+    allScores.classList.remove("nodisp");
 
+    // Making Point and all initial into arrays instead of string 
     var pts = localStorage.getItem("points").split("_");
     var inits = localStorage.getItem("initials").split("_");
-  }
 
- 
+    // If stored value doesn't exist, let user know there are no saved values
+    if (pts === null) {
+        pts.innerText = "no saved scores";
+    } else {
+        // If a value is retrieved from client storage set t
+        for (var i = 0; i < pts.length; i++) {
+            allScores.innerText += pts[i] + " " + inits[i] + "\r";
+        }
+    }
+
+}
   //function to reset points
   // //   function resetPoints() {
 // //     // Resets win and loss counts
