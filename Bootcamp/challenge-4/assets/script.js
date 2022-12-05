@@ -5,9 +5,12 @@ var startButton = document.getElementById("start-button");
 var points = document.getElementById("points");
 var questionContainer = document.getElementById('question');
 var startHeader = document.getElementById('start-header');
-var result = document.getElementById('result');
-var resetButton = document.querySelector(".reset-button");
-// Getting the options
+var finalResult = document.getElementById('display-result');
+var resetButton = document.getElementById("reset-button");
+var finalPoints = document.getElementById("final-result");
+var result = document.getElementById("result");
+
+// Getting the options for quiz
 const option1 = document.getElementById('option1');
 const option2 = document.getElementById('option2');
 const option3 = document.getElementById('option3');
@@ -49,7 +52,7 @@ const questions = [
         correctAnswer: "d" 
     }, 
     {
-        question: "String values must be encolosed within ________ when being assigned to variables  ",
+        question: "String values must be enclosed within ________ when being assigned to variables  ",
         answers: {
             a: "commas",
             b: "curly brackets",
@@ -107,9 +110,9 @@ function startTimer() {
       timerElement.textContent = timerCount;
 
       // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);  
+      if (timerCount <= 0) {
+        // If timer has run out display results 
+        displayResults(); 
       }
     }, 1000);
 }
@@ -118,9 +121,17 @@ function startTimer() {
 // Function for display results
 
 function displayResults() {
-    final
-    points.textContent = pointCounter;
-    localStorage.setItem("points", pointCounter);
+        //Hide quiz when finished  
+        quizContainer.classList.add("nodisp")
+        //Display Result form 
+        finalResult.classList.remove("nodisp")
+        //Clear timer 
+        clearInterval(timer);
+
+
+    
+    finalPoints.textContent = points.textContent;
+    // localStorage.setItem("points", pointCounter);
 }
   
  // NOT DONE
@@ -129,13 +140,12 @@ function displayResults() {
     var storedPoints = localStorage.getItem("pointCount");
     // If stored value doesn't exist, set counter to 0
     if (storedPoints === null) {
-      pointCounter = 0;
+      points.textContent = 0;
     } else {
       // If a value is retrieved from client storage set the pointCounter to that value
-      pointCounter = storedPoints;
+      points.textContent = storedPoints;
     }
-    //Render points to page
-    point.textContent = pointCounter;
+
   }
   
 

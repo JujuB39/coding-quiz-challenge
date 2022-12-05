@@ -23,14 +23,17 @@
       <button id="start-button">Start</button>
     </header>
 
+    <!-- Quiz questions and options -->
     <div id="quiz" class="nodisp">
         <div class="panel ">
-            <div class="result">
+            <div class="results">
+                <div id="result"> </div>
                 <div class = "result-container">
                     <div>
                     <h2>Points: <span id="points">0 </span> </h2>
                     </div>
                 </div>
+            </div>
 
             <div class="question-container" id="question">
                 Question goes here.
@@ -45,14 +48,18 @@
                 <button class="option" id="option4">option4</button>
             </div>
         </div>
-        <div id="result"> </div>
+     
     </div>
 
+    <!-- form for final results -->
     <div id="display-result" class="nodisp">
         <h3> Final Score: <span id="final-result"> </span></h3>
+        <label for="Initials">Enter your initials </label>
         <input type="text" id="submit-results" name="Initials"/>
         <button id="submit"> Submit</button>
-        <button id="reset-button"> Reset Score</button> 
+        <button id="reset-button"> Reset Score</button>          
+
+
     </div>
 
     <script src="assets/script.js"></script>
