@@ -1,14 +1,19 @@
 //Variables needed from html
 var quizContainer = document.getElementById('quiz');
 var timerElement = document.getElementById("timer-count");
-var startButton = document.getElementById("start-button");
 var points = document.getElementById("points");
 var questionContainer = document.getElementById('question');
 var startHeader = document.getElementById('start-header');
 var finalResult = document.getElementById('display-result');
-var resetButton = document.getElementById("reset-button");
 var finalPoints = document.getElementById("final-result");
 var result = document.getElementById("result");
+var initials = document.getElementById("submit-results")
+
+// Gathered all buttons needed 
+var startButton = document.getElementById("start-button");
+var resetButton = document.getElementById("reset-button");
+var submitButton = document.getElementById("submit")
+var highScoreButton = document.getElementById("high-score-button")
 
 // Getting the options for quiz
 const option1 = document.getElementById('option1');
@@ -117,22 +122,41 @@ function startTimer() {
     }, 1000);
 }
 
-//NOT DONE!!!
 // Function for display results
 
 function displayResults() {
-        //Hide quiz when finished  
-        quizContainer.classList.add("nodisp")
-        //Display Result form 
-        finalResult.classList.remove("nodisp")
-        //Clear timer 
-        clearInterval(timer);
-
-
-    
+    //Hide quiz when finished  
+    quizContainer.classList.add("nodisp")
+    //Display Result form 
+    finalResult.classList.remove("nodisp")
+    //Clear timer 
+    clearInterval(timer);
+    //Display final points
     finalPoints.textContent = points.textContent;
-    // localStorage.setItem("points", pointCounter);
 }
+
+//function to store points when submit button is clicked
+function storePoints() {
+    //Gets current stored points
+    var currentPointsString = localStorage.getItem("points");
+    //If else statement for if there is points are already stored 
+    if (currentPointsString) {
+        localStorage.setItem("points", currentPointsString + "_" + finalPoints.textContent);
+    } else {
+        localStorage.setItem("points", finalPoints.textContent);
+    }
+    //Gets current initials 
+    var currentInitialString = localStorage.getItem("initials");
+    //If else statement for if there is initials already stored 
+    if(currentInitialString) {
+        localStorage.setItem("initials", currentInitialString + "_" + initials.textContent);
+    } else {
+        localStorage.setItem("initials", initials.textContent);
+    }
+
+}
+
+     
   
  // NOT DONE
   function getPoints() {
@@ -146,7 +170,23 @@ function displayResults() {
       points.textContent = storedPoints;
     }
 
+    var pts = localStorage.getItem("points").split("_");
+    var inits = localStorage.getItem("initials").split("_");
   }
+
+ 
+  //function to reset points
+  // //   function resetPoints() {
+// //     // Resets win and loss counts
+// //     pointCounter = 0;
+   
+// //     // Renders win and loss counts and sets them into client storage
+// //     setPoints()
+// //   }
+// //   // Attaches event listener to button
+
+//localstorage.clear()
+ 
   
 
 
@@ -224,6 +264,10 @@ function nextQuestion() {
 
 // Listening for click on start button
 startButton.addEventListener('click', startQuiz);
+submitButton.addEventListener('click', storePoints);
+resetButton.addEventListener("click", resetPoints);
+highScoreButton.addEventListener("click", getPoints);
+
 
 
 
@@ -238,15 +282,7 @@ startButton.addEventListener('click', startQuiz);
   
 
   
-// //   function resetGame() {
-// //     // Resets win and loss counts
-// //     pointCounter = 0;
-   
-// //     // Renders win and loss counts and sets them into client storage
-// //     setPoints()
-// //   }
-// //   // Attaches event listener to button
-// //   resetButton.addEventListener("click", resetGame);
+
 
 
 
