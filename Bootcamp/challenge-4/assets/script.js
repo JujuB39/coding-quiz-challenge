@@ -153,6 +153,8 @@ function storePoints() {
     } else {
         localStorage.setItem("initials", initials.value );
     }
+    //resets score for the start of quiz again 
+    points.textContent = 0
     // Goes to beginning of quiz once submit is hit 
     startQuiz()
 }
@@ -180,6 +182,8 @@ function getPoints() {
             allScores.innerText += pts[i] + " " + inits[i] + "\r";
         }
     }
+    //resets score 
+    points.textContent = 0
 
 }
 
