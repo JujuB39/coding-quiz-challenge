@@ -149,11 +149,12 @@ function storePoints() {
     var currentInitialString = localStorage.getItem("initials");
     //If else statement for if there is initials already stored 
     if(currentInitialString) {
-        localStorage.setItem("initials", currentInitialString + "_" + initials.textContent);
+        localStorage.setItem("initials", currentInitialString + "_" + initials.value);
     } else {
-        localStorage.setItem("initials", initials.textContent);
+        localStorage.setItem("initials", initials.value );
     }
-
+    // Goes to beginning of quiz once submit is hit 
+    startQuiz()
 }
 
      
@@ -162,14 +163,17 @@ function storePoints() {
 function getPoints() {
     //Removing nodisp class so High scores are visible 
     allScores.classList.remove("nodisp");
+    
+    // Ensures that points are cleared everytime view high scores button is clicked
+    allScores.innerText = ""
 
     // Making Point and all initial into arrays instead of string 
-    var pts = localStorage.getItem("points").split("_");
-    var inits = localStorage.getItem("initials").split("_");
+    var pts = localStorage.getItem("points")?.split("_");
+    var inits = localStorage.getItem("initials")?.split("_");
 
     // If stored value doesn't exist, let user know there are no saved values
-    if (pts === null) {
-        pts.innerText = "no saved scores";
+    if (!pts) {
+        allScores.innerText = "no saved scores";
     } else {
         // If a value is retrieved from client storage set t
         for (var i = 0; i < pts.length; i++) {
@@ -178,17 +182,17 @@ function getPoints() {
     }
 
 }
-  //function to reset points
-  // //   function resetPoints() {
-// //     // Resets win and loss counts
-// //     pointCounter = 0;
-   
-// //     // Renders win and loss counts and sets them into client storage
-// //     setPoints()
-// //   }
-// //   // Attaches event listener to button
 
-//localstorage.clear()
+// Function to reset points 
+
+function resetPoints() {
+    // Resets win and loss counts
+    points.textContent = 0;
+    // Clears local storage
+    localStorage.clear()
+    //Goes to beginning of quiz once Reset is clicked
+    startQuiz()
+}
  
   
 
@@ -196,6 +200,8 @@ function getPoints() {
 
 //function to start Quiz 
 function startQuiz() {
+    //Makes sure current question is equal to 0 so that quiz can restart when submit or reset button is clicked
+    currentQuestion = 0
     //Hide starter header when quiz starts 
     startHeader.classList.add("nodisp");
     // Display quiz 
