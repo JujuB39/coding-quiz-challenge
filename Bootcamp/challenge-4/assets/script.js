@@ -6,6 +6,7 @@ var points = document.getElementById("points");
 var questionContainer = document.getElementById('question');
 var startHeader = document.getElementById('start-header');
 var result = document.getElementById('result');
+var resetButton = document.querySelector(".reset-button");
 // Getting the options
 const option1 = document.getElementById('option1');
 const option2 = document.getElementById('option2');
@@ -113,14 +114,35 @@ function startTimer() {
     }, 1000);
 }
 
-// Function
+//NOT DONE!!!
+// Function for display results
 
-
+function displayResults() {
+    final
+    points.textContent = pointCounter;
+    localStorage.setItem("points", pointCounter);
+}
+  
+ // NOT DONE
+  function getPoints() {
+    // Get stored value from client storage, if it exists
+    var storedPoints = localStorage.getItem("pointCount");
+    // If stored value doesn't exist, set counter to 0
+    if (storedPoints === null) {
+      pointCounter = 0;
+    } else {
+      // If a value is retrieved from client storage set the pointCounter to that value
+      pointCounter = storedPoints;
+    }
+    //Render points to page
+    point.textContent = pointCounter;
+  }
+  
 
 
 
 //function to start Quiz 
-function startQuiz () {
+function startQuiz() {
     //Hide starter header when quiz starts 
     startHeader.classList.add("nodisp");
     // Display quiz 
@@ -134,7 +156,7 @@ function startQuiz () {
 
 
 // function to go to next Question
-function nextQuestion () {
+function nextQuestion() {
     // If statement to display results after last question
     if (currentQuestion >= questions.length) {
         displayResults();
@@ -200,44 +222,11 @@ startButton.addEventListener('click', startQuiz);
 
 
 
-// //   // Updates points on screen and to client storage
-// // function setPoints() {
-// //     win.textContent = pointCounter;
-// //     localStorage.setItem("points", pointCounter);
-// //   }
-  
- 
-// //   function getPoints() {
-// //     // Get stored value from client storage, if it exists
-// //     var storedPoints = localStorage.getItem("pointCount");
-// //     // If stored value doesn't exist, set counter to 0
-// //     if (storedPoints === null) {
-// //       pointCounter = 0;
-// //     } else {
-// //       // If a value is retrieved from client storage set the pointCounter to that value
-// //       pointCounter = storedPoints;
-// //     }
-// //     //Render points to page
-// //     point.textContent = pointCounter;
-// //   }
-  
 
 
   
-// //   // Attach event listener to document to listen for key event
-// //   document.addEventListener("", function(event) {
-// //     // If the count is zero, exit function
-// //     if (timerCount === 0) {
-// //       return;
-// //     }
-// //   });
   
-// //   // Attach event listener to start button to call startGame function on click
-// //   startButton.addEventListener("click", startGame);
-  
-  
-// //   // Bonus: Add reset button
-// //   var resetButton = document.querySelector(".reset-button");
+
   
 // //   function resetGame() {
 // //     // Resets win and loss counts
