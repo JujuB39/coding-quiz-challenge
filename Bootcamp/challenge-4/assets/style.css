@@ -3,7 +3,7 @@
 }
 
 .title {
-    font-size: 80pt;
+    font-size: 40pt;
     font-weight: bolder;
     text-align: center;
     color: #8BB174;
@@ -11,21 +11,21 @@
 }
 
 .timer-text {
-    font-size: x-large;
+    font-size: large;
     text-align: right;
     color: #B5CA8D;
 }
 
 #timer-count {
-    font-size: xx-large;
+    font-size: large;
     color: #B5CA8D;
 }
 h1 {
-    font-size: medium;
+    font-size: small;
 }
 
 h2 {
-    font-size: 35pt;
+    font-size: 15pt;
     color: #B5CA8D;
 }
 
@@ -40,7 +40,7 @@ body {
 
 .description {
     color: #B5CA8D;
-    font-size: 40pt;
+    font-size: 20pt;
 }
 
 .panel{
@@ -49,14 +49,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #426B69 ; */
+   
 }
 #question {
     margin: 10px;
     padding: 5px;
     width: 80vw;
     height: 10vh;
-    font-size: 50pt;
+    font-size: 25pt;
     text-align: center;
     color:#B5CA8D;
       
@@ -67,7 +67,7 @@ body {
     width:80vw;
     height: 10vh;
     text-align: center;
-    font-size: 25pt;
+    font-size: 15pt;
     color: #8BB174;
       
 }
@@ -84,8 +84,8 @@ body {
     padding: 10px;
     width: 15vw;
     height: 10vh;
-    font-size: x-large;
-    font-weight: bolder;
+    font-size: large;
+    font-weight: bold;
     background-color: #8BB174;
     border-radius: 25%;
 }
@@ -94,44 +94,44 @@ body {
 }
 
 #start-button {
-width: 150px;
-height: 100px;
-font-size: larger;
+width: 75px;
+height: 50px;
+font-size: medium;
 font-weight: bolder;
 }
 
 #high-score-button {
     width: 150px;
-    height: 70px;
+    height: 50px;
     font-weight: bolder;
-    font-size: larger;
+    font-size: medium;
 }
 
 #display-result {
-    font-size: xx-large;
+    font-size: large;
     color: #8BB174;
 }
 
 #submit-results {
-    width: 400px;
-    height: 50px;
+    width: 200px;
+    height: 25px;
 }
 
 #submit {
-width: 120px;
-height: 70px;
+width: 80px;
+height: 35px;
 font-weight: bolder;
-font-size: large;
+font-size: small;
 }
 
 #reset-button {
-    width: 130px;
-    height: 70px;
+    width: 100px;
+    height: 40px;
     font-weight: bolder;
-    font-size: large;
+    font-size: small;
 }
 
 #all-scores {
-    font-size: 30pt;
+    font-size: 15pt;
     color: #8BB174;
 }
