@@ -36,8 +36,8 @@ The last function I worked on was my start quiz function. In that function I kne
 The last thing I worked on was my CSS. I wanted my page to be fully functional before messing with my styling. The first thing I knew I needed for my CSS was to make sure that my nodisp class was in there and working so that I would hide and display certain aspects I needed. When I did that I made sure to add !important to it because I needed to make sure that if this class was on an element it would overide the other CSS I needed to make for it and that it actually did not display anything. After that I just went through several aspects of my html and adjusted spacing, coloring and size so that it was easily readable. 
 
 ## Screenshot of my Page 
-![alt text](/screenshots/screenshotoflanding.png "Initial Page")
+![alt text](./screenshots/screenshotoflanding.png "Initial Page")
 
-![alt text](/screenshots/screenshotofquiz.png "Quiz Page")
+![alt text](./screenshots/screenshotofquiz.png "Quiz Page")
 
-![alt text](/screenshots/finalscore.png "Final Result Page")
+![alt text](./screenshots/finalscore.png "Final Result Page")
