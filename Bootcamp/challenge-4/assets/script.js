@@ -9,6 +9,7 @@ var finalPoints = document.getElementById("final-result");
 var result = document.getElementById("result");
 var initials = document.getElementById("submit-results")
 var allScores = document.getElementById("all-scores")
+
 // Gathered all buttons needed 
 var startButton = document.getElementById("start-button");
 var resetButton = document.getElementById("reset-button");
