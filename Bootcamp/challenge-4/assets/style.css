@@ -3,22 +3,30 @@
 }
 
 .title {
-    font-size: x-large;
+    font-size: 80pt;
     font-weight: bolder;
     text-align: center;
+    color: #8BB174;
 
 }
 
 .timer-text {
-    font-size: small;
+    font-size: x-large;
     text-align: right;
+    color: #B5CA8D;
 }
 
 #timer-count {
-    font-size: large;
+    font-size: xx-large;
+    color: #B5CA8D;
 }
 h1 {
     font-size: medium;
+}
+
+h2 {
+    font-size: 35pt;
+    color: #B5CA8D;
 }
 
 
@@ -26,7 +34,13 @@ body {
     padding: 0;
     margin: 0;    
     width:100vw;
-    height: 100vh;    
+    height: 100vh;  
+    background-color:#2A4849;  
+}
+
+.description {
+    color: #B5CA8D;
+    font-size: 40pt;
 }
 
 .panel{
@@ -35,24 +49,26 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: #426B69 ; */
 }
 #question {
     margin: 10px;
     padding: 5px;
     width: 80vw;
     height: 10vh;
-    background-color: #c7dddf;
-    font-size: x-large;
+    font-size: 50pt;
     text-align: center;
+    color:#B5CA8D;
       
 }
-.result {
+.results {
     margin: 10px;
     padding: 5px;
     width:80vw;
     height: 10vh;
     text-align: center;
-    font-size: 20px;
+    font-size: 25pt;
+    color: #8BB174;
       
 }
 .option-container {
@@ -62,20 +78,60 @@ body {
     padding: 5px;
     width: 80vw;
     height: 20vh;
-    background-color: #9eb1b3;   
         
 }
 .option {    
     padding: 10px;
     width: 15vw;
     height: 10vh;
-    font-size: larger;
-    background-color: teal;
+    font-size: x-large;
+    font-weight: bolder;
+    background-color: #8BB174;
     border-radius: 25%;
 }
 .option:hover {
     background-color: rgb(226, 226, 42);
 }
 
+#start-button {
+width: 150px;
+height: 100px;
+font-size: larger;
+font-weight: bolder;
+}
 
-/* Add start button id  */
+#high-score-button {
+    width: 150px;
+    height: 70px;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#display-result {
+    font-size: xx-large;
+    color: #8BB174;
+}
+
+#submit-results {
+    width: 400px;
+    height: 50px;
+}
+
+#submit {
+width: 120px;
+height: 70px;
+font-weight: bolder;
+font-size: large;
+}
+
+#reset-button {
+    width: 130px;
+    height: 70px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+#all-scores {
+    font-size: 30pt;
+    color: #8BB174;
+}
